@@ -70,14 +70,22 @@
 
     <script>
       $(function() {
+        // knockout view model
         function ViewModel(data) {
           var self = this;
+
+          // knockout mapping JSON data to view model
           ko.mapping.fromJS(data, {}, self);
         }
 
+        // get data - sample data from Donors Choose API
         $.getJSON("http://api.donorschoose.org/common/json_feed.html?zip=50310&APIKey=DONORSCHOOSE&max=50&callback=?", function(data) {
+
+          // bind the data
           ko.applyBindings(new ViewModel(data));
-          $("#proposals").DataTable(  );
+
+          // apply DataTables magic
+          $("#proposals").DataTable( responsive: true );
         });
       });
     </script>
