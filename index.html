@@ -42,7 +42,7 @@
         <tbody>
         <!-- ko foreach: proposals() -->
           <tr>
-            <td><span data-bind="html: $data.title"></span></td>
+            <td><a data-bind="attr: { href: $data.proposalUrl }, html: $data.title"></a></td>
             <td><span data-bind="text: $data.schoolName"></span></td>
             <td><span data-bind="text: $data.percentFunded"></span></td>
           </tr>
