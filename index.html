@@ -24,6 +24,12 @@
         <h1>Simple KnockoutJS Paging With Datatables</h1>
       </header>
 
+      <p class="lead">This demo pulls data from the <a href="http://data.donorschoose.org/" target="_blank">Donors Choose Data API</a> to demonstrate how paging, sorting, and searching works with <a href="http://knockoutjs.com/" target="_blank">KnockoutJS</a> bound data and <a href="http://datatables.net/" target="_blank">DataTables</a>. Read more in <a href="http://brudtkuhl.com/easy-knockoutjs-pagination-data-tables/">blog post</a>.
+
+      <header class="page-header">
+        <h2>Demo <small>Pulling 50 proposals from 50310</small></h2>
+      </header>
+
       <!-- the table we apply DataTables magic too, data populated with Knockout Foreach iterating over view model -->
       <table id="proposals" class="table table-striped table-bordered">
         <thead>
@@ -36,13 +42,38 @@
         <tbody>
         <!-- ko foreach: proposals() -->
           <tr>
-            <td><span data-bind="html: $data.title"></span></td>
+            <td><a data-bind="attr: { href: $data.proposalUrl }, html: $data.title"></a></td>
             <td><span data-bind="text: $data.schoolName"></span></td>
             <td><span data-bind="text: $data.percentFunded"></span></td>
           </tr>
         <!-- /ko -->
         </tbody>
       </table>
+
+      <header class="page-header">
+        <h2>The Code</h2>
+      </header>
+
+      <script src="https://gist.github.com/abrudtkuhl/d381cd0b0a3fa411ad46.js"></script>
+
+      <header class="page-header">
+        <h2>Dependencies</h2>
+      </header>
+
+      <ul>
+        <li><a href="http://jquery.com">jQuery</a></li>
+        <li><a href="http://getbootstrap.com">Bootstrap</a></li>
+        <li><a href="http://knockoutjs.com/">KnockoutJS</a></li>
+        <li><a href="http://knockoutjs.com/documentation/plugins-mapping.html">KnockoutJS Mapping Plugin</a></li>
+        <li><a href="http://datatables.net/">DataTables</a></li>
+        <li><a href="http://datatables.net/manual/styling/bootstrap">DataTables Bootstrap</a></li>
+      </ul>
+
+      <hr />
+
+      <footer>
+        <p class="text-muted text-center">Built by <a href="http://youmetandy.com">Andy Brudtkuhl</a> - <a href="http://brudtkuhl.com/easy-knockoutjs-pagination-data-tables/">Blog Post</a> - <a href="https://github.com/abrudtkuhl/Simple-Knockout-Js-Paging-Datatables">Full Source on Github</a> </p>
+      </footer>
 
     </div>
 
